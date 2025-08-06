@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
-    private void Update()
+    Vector2 moveInput;
+
+    void OnMove(InputValue value)
     {
-        float xMove = Input.GetAxis("Horizontal");
-        float yMove = Input.GetAxis("Vertical");
-        Debug.Log("xMove value:" + xMove);
-        Debug.Log("yMove value:" + yMove);
+        moveInput = value.Get<Vector2>();
+        print("moveInput:" + moveInput);
     }
 }
