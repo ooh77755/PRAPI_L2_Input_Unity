@@ -12,11 +12,11 @@ public class Player : MonoBehaviour
         float yMove = Input.GetAxis("Vertical") * speed * Time.deltaTime;
         transform.Translate(xMove, yMove, 0);
 
-        if(Input.GetKeyDown(KeyCode.D))
+        if(xMove > 0)
         {
             GetComponent<SpriteRenderer>().flipX = false;
         }
-        else if(Input.GetKeyDown(KeyCode.A))
+        else if(xMove < 0)
         {
             GetComponent<SpriteRenderer>().flipX = true;
         }
